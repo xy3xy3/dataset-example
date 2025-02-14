@@ -33,7 +33,7 @@ is_valid(assigned(Oliver) == T) ::: (E)
 ```
 ### Error
 SyntaxError: invalid syntax. Perhaps you forgot a comma?","### Analysis
-1. The extra comment `# Apply Plan 1 for the first reassignment` has appeared; it can be deleted.",,
+1. The extra comment `# Apply Plan 1 for the first reassignment` has appeared; it can be deleted."
 "### Context:
 Four apprenticesLouis, Madelyn, Nora, and Oliverare initially assigned to projects Q, R, S, and T, respectively. During the year in which they are apprentices, two reassignments of apprentices to projects will be made, each time according to a different one of the following plans, which can be used in any order: Plan 1. The apprentice assigned to project Q switches projects with the apprentice assigned to project S and the apprentice assigned to project R switches projects with the apprentice assigned to project T. Plan 2. The apprentice assigned to project S switches projects with the apprentice assigned to project T. Plan 3. Louis and Madelyn switch projects with each other.
 ### Question:
@@ -80,7 +80,7 @@ is_valid(And(assigned(Nora) == S, assigned(Oliver) == T)) ::: (E)
 1. The Constraints part seems to have the issue of formulas not being written on a single line.
 
 2. `SyntaxError: invalid syntax`. There might be some syntax errors.","### Analysis
-1. Some constraint statements are not written on a single line; minor adjustments can be made. The obtained constraint part is as follows:��
+1. Some constraint statements are not written on a single line; minor adjustments can be made. The obtained constraint part is as follows:：
 ```plaintext
 # Constraints
 assigned(Louis) == Q ::: Louis is initially assigned to project Q
@@ -90,7 +90,7 @@ assigned(Oliver) == T ::: Oliver is initially assigned to project T
 Or(And(assigned(Louis) == S, assigned(Nora) == Q, assigned(Madelyn) == T, assigned(Oliver) == R),And(assigned(Louis) == Q, assigned(Nora) == S, assigned(Madelyn) == R, assigned(Oliver) == T)) ::: Plan 1: The apprentice assigned to project Q switches projects with the apprentice assigned to project S and the apprentice assigned to project R switches projects with the apprentice assigned to project T
 Or(And(assigned(Louis) == Q, assigned(Madelyn) == R, assigned(Nora) == T, assigned(Oliver) == S),And(assigned(Louis) == Q, assigned(Madelyn) == R, assigned(Nora) == S, assigned(Oliver) == T)) ::: Plan 2: The apprentice assigned to project S switches projects with the apprentice assigned to project T
 Or(And(assigned(Louis) == R, assigned(Madelyn) == Q, assigned(Nora) == S, assigned(Oliver) == T),And(assigned(Louis) == Q, assigned(Madelyn) == R, assigned(Nora) == S, assigned(Oliver) == T)) ::: Plan 3: Louis and Madelyn switch projects with each other
-```",,
+```"
 "### Context
 ... (omitted)
 ### Question
@@ -171,9 +171,8 @@ is_valid(And(placed(Glen) == Level2, placed(Glen) != Level3)) ::: (B)
 is_valid(And(placed(Jan) == Level2, placed(Jan) != Level3)) ::: (C)
 is_valid(And(placed(Kathy) == Level2, placed(Kathy) != Level3)) ::: (D)
 is_valid(And(placed(Nick) == Level2, placed(Nick) != Level3)) ::: (E)
-```",,
-,,index,content
-,,"### Context:
+```"
+"### Context:
 A soloist will play six different guitar concertos, exactly one each Sunday for six consecutive weeks. Two concertos will be selected from among three concertos by GiulianiH, J, and K; two from among four concertos by RodrigoM, N, O, and P; and two from among three concertos by VivaldiX, Y, and Z. The following conditions apply without exception: If N is selected, then J is also selected. If M is selected, then neither J nor O can be selected. If X is selected, then neither Z nor P can be selected. If both J and O are selected, then J is played at some time before O. X cannot be played on the fifth Sunday unless one of Rodrigo's concertos is played on the first Sunday.
 ### Question:
 If the six concertos to be played are J, K, N, O, Y, and Z and if N is to be played on the first Sunday, then which one of the following concertos CANNOT be played on the second Sunday?
@@ -254,7 +253,7 @@ is_unsat(played_on(Z) == 2) ::: (E)
 3. **Removed Comments and Quotes**: Removed any comments in the declarations section and ensured no quotes around identifiers.
 
 This should resolve the issues and make the SAT logic program compliant with the specified format."
-,,"### Context:
+"### Context:
 A housing committee will consist of exactly five representatives, one of whom will be its chairperson. The representatives will be selected from among a group of five tenantsF, G, J, K, and Mand a group of four homeownersP, Q, R, and S. The following conditions must be met: The committee must include at least two representatives from each group. The chairperson must be a representative belonging to the group from which exactly two representatives are selected. If F is selected, Q must be selected. If G is selected, K must be selected. If either J or M is selected, the other must also be selected. M and P cannot both be selected.
 ### Question:
 Which one of the following is an acceptable selection of representatives for the committee?
@@ -377,12 +376,12 @@ is_sat(And(selected(J), selected(M), selected(P), selected(Q), selected(S), Or(c
    - Ensured that no statement spans multiple lines.
 
 This corrected program should now be syntactically valid and ready for further processing."
-,,"### Context
-... ��omitted��
+"### Context
+... （omitted）
 ### Question
-... ��omitted��
+... （omitted）
 ### Options
-... ��omitted��
+... （omitted）
 ### Logic program
 ```plaintext
 # Declarations
@@ -417,7 +416,7 @@ Z3Exception: Symbolic expressions cannot be cast to concrete Boolean values.. `E
 1. In the SAT program, even if a function maps to a Boolean value, it cannot be used directly as a Boolean value; instead, it should be connected using `And`. Therefore,
     - The statement `Count([t:tenants], selected(t)) == 2 or Count([h:homeowners], selected(h)) == 2` should be modified to `Or(Count([t:tenants], selected(t)) == 2, Count([h:homeowners], selected(h)) == 2)`.
 2. Other statements containing `or` or `and` should also be modified accordingly."
-,,"### Context:
+"### Context:
 A soloist will play six different guitar concertos, exactly one each Sunday for six consecutive weeks. Two concertos will be selected from among three concertos by GiulianiH, J, and K; two from among four concertos by RodrigoM, N, O, and P; and two from among three concertos by VivaldiX, Y, and Z. The following conditions apply without exception: If N is selected, then J is also selected. If M is selected, then neither J nor O can be selected. If X is selected, then neither Z nor P can be selected. If both J and O are selected, then J is played at some time before O. X cannot be played on the fifth Sunday unless one of Rodrigo's concertos is played on the first Sunday.
 ### Question:
 If the six concertos to be played are J, K, N, O, Y, and Z and if N is to be played on the first Sunday, then which one of the following concertos CANNOT be played on the second Sunday?
@@ -458,7 +457,7 @@ is_unsat(played_on(Z) == 2) ::: (E)
 Z3Exception: Symbolic expressions cannot be cast to concrete Boolean values.. `Error in Line: raise Z3Exception(""Symbolic expressions cannot be cast to concrete Boolean values."")`
 	It is not supported to perform undefined operations on certain quantities.","### Analysis
 In the statement `selected(J) and selected(K) and selected(N) and selected(O) and selected(Y) and selected(Z) ::: The six concertos to be played are J, K, N, O, Y, and Z`, the conjunction `and` cannot be used directly to connect symbolic expressions, even though they map to Boolean values, because this is an SAT problem. The statement can be revised to `And(selected(J), selected(K), selected(N), selected(O), selected(Y), selected(Z)) ::: The six concertos to be played are J, K, N, O, Y, and Z`."
-,,"### Context:
+"### Context:
 On the basis of an examination, nine studentsFred, Glen, Hilary, Ida, Jan, Kathy, Laura, Mike, and Nickare each placed in one of three classes. The three highest scorers are placed in the level 1 class; the three lowest scorers are placed in the level 3 class. The remaining three are placed in the level 2 class. Each class has exactly three students. Ida scores higher than Glen. Glen scores higher than both Jan and Kathy. Jan scores higher than Mike. Mike scores higher than Hilary. Hilary scores higher than Nick. Kathy scores higher than both Fred and Laura.
 ### Question:
 How many different combinations of students could form the level 1 class?
@@ -491,7 +490,7 @@ assigned(Kathy) != assigned(Fred) and assigned(Kathy) != assigned(Laura) ::: Kat
 Z3Exception: Symbolic expressions cannot be cast to concrete Boolean values.. `Error in Line: raise Z3Exception(""Symbolic expressions cannot be cast to concrete Boolean values."")`
 	It is not supported to perform undefined operations on certain quantities.","### Analysis
 - Note that this is an SAT problem, and statements like `assigned(Mike) != assigned(Hilary)` are constraint conditions, not Boolean expressions, so they cannot be directly connected using `and`; instead, `And` should be used, such as `And(assigned(Kathy) > assigned(Fred), assigned(Kathy) > assigned(Laura))`.
-- Of course, there is another issue here, which is that the information about `higher` is not reflected. The `classes` should be mapped to integer types, and constraints should be placed on the hierarchy of different classes, then modify the statements containing ��higher�� accordingly. One possible revision is as follows:
+- Of course, there is another issue here, which is that the information about `higher` is not reflected. The `classes` should be mapped to integer types, and constraints should be placed on the hierarchy of different classes, then modify the statements containing “higher” accordingly. One possible revision is as follows:
 ```plaintext
 # Declarations
 students = EnumSort([Fred, Glen, Hilary, Ida, Jan, Kathy, Laura, Mike, Nick])
@@ -511,8 +510,8 @@ And(assigned(Kathy) > assigned(Fred), assigned(Kathy) > assigned(Laura)) ::: Kat
 # Options
 ...
 ```"
-,,"### Context:
-A bookshelf contains exactly six books��1, 2, 3, 4, 5, and 6��arranged in that order, from left to right. It also contains exactly six genres of books��one mystery, one romance, one science fiction, one biography, one fantasy, and one history��a different genre on each of the shelves, in an order satisfying the following conditions:
+"### Context:
+A bookshelf contains exactly six books—1, 2, 3, 4, 5, and 6—arranged in that order, from left to right. It also contains exactly six genres of books—one mystery, one romance, one science fiction, one biography, one fantasy, and one history—a different genre on each of the shelves, in an order satisfying the following conditions:
 - The mystery book is on a lower-numbered shelf than the science fiction book.
 - The biography book is on shelf 1 or shelf 6.
 - Either the fantasy book or the history book is on shelf 3.
@@ -544,9 +543,8 @@ For example, instead of directly comparing symbolic values like in `arranged(mys
 ```plaintext
 ForAll([g:genres, h:genres], Implies(g != h, arranged(g) != arranged(h)))
 ```"
-,,index,content
-,,"#### Context:
-Six teams��Team A, Team B, Team C, Team D, Team E, and Team F��are scheduled to play six matches��Match 1, Match 2, Match 3, Match 4, Match 5, and Match 6. The scheduling must satisfy the following conditions:
+"#### Context:
+Six teams—Team A, Team B, Team C, Team D, Team E, and Team F—are scheduled to play six matches—Match 1, Match 2, Match 3, Match 4, Match 5, and Match 6. The scheduling must satisfy the following conditions:
 - Team A plays before Team B.
 - Team B is assigned to Match 3.
 - Team C plays after Team D.
@@ -583,8 +581,8 @@ The error occurs because the `If()` function is missing the ""else"" clause. To 
 ```plaintext
 Implies(schedule(Team_A) != schedule(Team_B), schedule(Team_A) < schedule(Team_B)) ::: Team A plays before Team B.
 ```"
-,,"#### Context:
-A group of exactly six students��John, Mary, Tom, Lisa, Mike, and Sarah��are assigned to six different subjects��Math, Physics, Chemistry, Biology, History, and Geography. The assignments must satisfy the following conditions:
+"#### Context:
+A group of exactly six students—John, Mary, Tom, Lisa, Mike, and Sarah—are assigned to six different subjects—Math, Physics, Chemistry, Biology, History, and Geography. The assignments must satisfy the following conditions:
 - John is assigned to Math or Physics.
 - Mary is assigned to a subject after John.
 - Tom is assigned to Chemistry.
@@ -621,8 +619,8 @@ The error occurs because the `If()` function requires three arguments: a conditi
 ```plaintext
 Implies(enrollment(John) == Physics, enrollment(Mary) > enrollment(John)) ::: Mary is assigned after John if John is assigned to Physics.
 ```"
-,,"### Context:
-A group of exactly six employees��Alice, Bob, Charlie, Diana, Eva, and Frank��are assigned to six different projects��Project X, Project Y, Project Z, Project A, Project B, and Project C. The projects are assigned in a specific order, and their order must satisfy the following conditions:
+"### Context:
+A group of exactly six employees—Alice, Bob, Charlie, Diana, Eva, and Frank—are assigned to six different projects—Project X, Project Y, Project Z, Project A, Project B, and Project C. The projects are assigned in a specific order, and their order must satisfy the following conditions:
 - Alice is assigned to a project before Bob.
 - Bob is assigned to Project Z.
 - Charlie is assigned to a project after Diana.
@@ -657,8 +655,7 @@ For example:
 ```plaintext
 Implies(assignment(Alice) != assignment(Bob), assignment(Alice) < assignment(Bob)) ::: Alice is assigned before Bob
 ```"
-,,index,content
-,,"### Context:
+"### Context:
 A housing committee will consist of exactly five representatives, one of whom will be its chairperson. The representatives will be selected from among a group of five tenantsF, G, J, K, and Mand a group of four homeownersP, Q, R, and S. The following conditions must be met: The committee must include at least two representatives from each group. The chairperson must be a representative belonging to the group from which exactly two representatives are selected. If F is selected, Q must be selected. If G is selected, K must be selected. If either J or M is selected, the other must also be selected. M and P cannot both be selected.
 ### Question:
 Which one of the following lists three representatives who could be selected together for the committee?
@@ -732,7 +729,7 @@ is_sat(And(selected(F), selected(J), selected(M))) ::: (C)
 is_sat(And(selected(G), selected(J), selected(K))) ::: (D)
 is_sat(And(selected(G), selected(J), selected(M))) ::: (E)
 ```"
-,,"### Context:
+"### Context:
 A fire chief is determining the work schedules of five firefighters: Fuentes, Graber, Howell, Iman, and Jackson. The schedule must meet the following conditions: Except for Saturday and Sunday, when none of them works, exactly one of the firefighters works each day. None of the firefighters can work more than two days per week. No firefighter works on two consecutive days. Fuentes never works later in the week than Jackson. If Howell works, then Graber must work on the following day.
 ### Question:
 Which one of the following CANNOT be a Monday-to-Friday work schedule?
@@ -776,8 +773,8 @@ NextDay = Function([days] -> [days])
 And(NextDay(Monday) == Tuesday, NextDay(Tuesday) == Wednesday, NextDay(Wednesday) == Thursday, NextDay(Thursday) == Friday) ::: Define the adjacency relationship between different days
 ... (omitting others)
 ```"
-,,"### Context:
-Exactly six dogs��P, Q, R, S, T, and U��are entered in a dog show. The judge of the show awards exactly four ribbons, one for each of first, second, third, and fourth places, to four of the dogs. The information that follows is all that is available about the six dogs: Each dog is either a greyhound or a labrador, but not both. Two of the six dogs are female and four are male. The judge awards ribbons to both female dogs, exactly one of which is a labrador. Exactly one labrador wins a ribbon. Dogs P and R place ahead of dog S, and dog S places ahead of dogs Q and T. Dogs P and R are greyhounds. Dogs S and U are labradors.
+"### Context:
+Exactly six dogs—P, Q, R, S, T, and U—are entered in a dog show. The judge of the show awards exactly four ribbons, one for each of first, second, third, and fourth places, to four of the dogs. The information that follows is all that is available about the six dogs: Each dog is either a greyhound or a labrador, but not both. Two of the six dogs are female and four are male. The judge awards ribbons to both female dogs, exactly one of which is a labrador. Exactly one labrador wins a ribbon. Dogs P and R place ahead of dog S, and dog S places ahead of dogs Q and T. Dogs P and R are greyhounds. Dogs S and U are labradors.
 ### Question: Which one of the following is a complete and accurate list of the dogs that can be greyhounds?
 ### Options:
 A) P, Q, S, T
@@ -811,9 +808,8 @@ ribbons = EnumSort([first, second, third, fourth, none])
 dog_ribbon = Function([dogs] -> [ribbons])
 ```
 Then modify the corresponding parts of the subsequent sentences accordingly."
-,,index,content
-,,"### Context
-A piano instructor will schedule exactly one lesson for each of six students��Grace, Henry, Janet, Steve, Tom, and Una��one lesson per day for six consecutive days. The schedule must conform to the following conditions: Henry's lesson is later in the schedule than Janet's lesson. Una's lesson is later in the schedule than Steve's lesson. Steve's lesson is exactly three days after Grace's lesson. Janet's lesson is on the first day or else the third day.
+"### Context
+A piano instructor will schedule exactly one lesson for each of six students—Grace, Henry, Janet, Steve, Tom, and Una—one lesson per day for six consecutive days. The schedule must conform to the following conditions: Henry's lesson is later in the schedule than Janet's lesson. Una's lesson is later in the schedule than Steve's lesson. Steve's lesson is exactly three days after Grace's lesson. Janet's lesson is on the first day or else the third day.
 ### Question
 Which one of the following is a complete and accurate list of days any one of which could be the day for which Tom's lesson is scheduled?
 ### Options
@@ -891,7 +887,7 @@ is_accurate_list([scheduled(Tom) == d2, scheduled(Tom) == d3, scheduled(Tom) == 
    - Ensured that the options are correctly labeled and formatted.
 
 This corrected program should now be free of the mentioned errors and adhere to the specified SAT format."
-,,"### Context:
+"### Context:
 Five peopleHarry, Iris, Kate, Nancy, and Victorare to be scheduled as contestants on a television show, one contestant per day, for five consecutive days from Monday through Friday. The following restrictions governing the scheduling of contestants must be observed: Nancy is not scheduled for Monday. If Harry is scheduled for Monday, Nancy is scheduled for Friday. If Nancy is scheduled for Tuesday, Iris is scheduled for Monday. Kate is scheduled for the next day after the day for which Victor is scheduled.
 ### Question:
 If Kate is scheduled for Wednesday, which one of the following could be true?
@@ -981,7 +977,7 @@ is_sat(Or(And(scheduled(Nancy) == Monday, scheduled(Kate) == Tuesday), And(sched
    - Ensured that each statement is on a single line to comply with the format requirements.
 
 This corrected program should now be free of syntax errors and ready for evaluation."
-,,"### Context
+"### Context
 A piano instructor will schedule exactly one lesson for each of six studentsGrace, Henry, Janet, Steve, Tom, and Unaone lesson per day for six consecutive days. The schedule must conform to the following conditions: Henry's lesson is later in the schedule than Janet's lesson. Una's lesson is later in the schedule than Steve's lesson. Steve's lesson is exactly three days after Grace's lesson. Janet's lesson is on the first day or else the third day.
 ### Question
 If Janet's lesson is scheduled for the first day, then the lesson for which one of the following students must be scheduled for the sixth day?
@@ -1018,7 +1014,7 @@ is_valid(scheduled(Una) == day6) ::: (E)
 TypeError: '>' not supported between instances of 'DatatypeRef' and 'DatatypeRef'. `Error in Line: pre_conditions.append(scheduled(Henry) > scheduled(Janet))`
 	It is not supported to perform undefined operations on certain quantities.","### Analysis
 1. The program involves comparisons and arithmetic operations on the custom data type `days`, which is not allowed. The type can be redefined as an integer type, and the order of each data point can be declared. That is, change `days = EnumSort([day1, day2, day3, day4, day5, day6])` to `days = IntSort([day1, day2, day3, day4, day5, day6])`, and add the constraint `And(day1 == 1, day2 == 2, day3 == 3, day4 == 4, day5 == 5, day6 == 6) ::: Define the order`."
-,,"### Context:
+"### Context:
 A soloist will play six different guitar concertos, exactly one each Sunday for six consecutive weeks. Two concertos will be selected from among three concertos by GiulianiH, J, and K; two from among four concertos by RodrigoM, N, O, and P; and two from among three concertos by VivaldiX, Y, and Z. The following conditions apply without exception: If N is selected, then J is also selected. If M is selected, then neither J nor O can be selected. If X is selected, then neither Z nor P can be selected. If both J and O are selected, then J is played at some time before O. X cannot be played on the fifth Sunday unless one of Rodrigo's concertos is played on the first Sunday.
 ### Question:
 If the six concertos to be played are J, K, N, O, Y, and Z and if N is to be played on the first Sunday, then which one of the following concertos CANNOT be played on the second Sunday?
@@ -1043,7 +1039,7 @@ Implies(And(selected(J), selected(O)), played_on(J) < played_on(O)) ::: If both 
 TypeError: '<' not supported between instances of 'DatatypeRef' and 'DatatypeRef'. `Error in Line: pre_conditions.append(Implies(And(selected(J), selected(O)), played_on(J) < played_on(O)))`
 	It is not supported to perform undefined operations on certain quantities.","### Analysis
 1. The function `played_on` maps to the type `weeks`, but since `weeks` is a custom type, it does not support the '<' operation. To resolve this, `weeks` can be modified to use `IntSort`, as integer types support comparison. That is, `weeks = IntSort([1, 2, 3, 4, 5, 6])`."
-,,"### Context:
+"### Context:
 Seven children are to be seated in seven chairs arranged in a row that runs from west to east. All seven children will face north. Four of the children are boys: Frank, Harry, Ivan, and Joel. Three are girls: Ruby, Sylvia, and Thelma. The children are assigned to chairs according to the following conditions: Exactly one child sits in each chair. No boy sits next to another boy. Ivan sits next to and east of the fourth child in the row. Sylvia sits east of Ivan. Frank sits next to Ruby.
 ### Question:
 If Frank does not sit next to any child who sits next to Ivan, which one of the following statements could be true?
@@ -1078,8 +1074,8 @@ is_sat(Exists([t:chairs, r:chairs], And(seated(Thelma) == t, seated(Ruby) == r, 
 ### Error
 TypeError: '<' not supported between instances of 'DatatypeRef' and 'DatatypeRef'. `Error in Line: if is_sat(Exists([h], And(seated(Harry) == h, h < seated(Frank)))): print('(A)')`","### Analysis
 `chair1` and so on are not variables of integer type and cannot perform comparison operations such as `<`. The type should be modified to `IntSort`. That is, `chairs = IntSort([chair1, chair2, chair3, chair4, chair5, chair6, chair7])`."
-,,"### Context:
-Exactly six dogs��P, Q, R, S, T, and U��are entered in a dog show. The judge of the show awards exactly four ribbons, one for each of first, second, third, and fourth places, to four of the dogs. The information that follows is all that is available about the six dogs: Each dog is either a greyhound or a labrador, but not both. Two of the six dogs are female and four are male. The judge awards ribbons to both female dogs, exactly one of which is a labrador. Exactly one labrador wins a ribbon. Dogs P and R place ahead of dog S, and dog S places ahead of dogs Q and T. Dogs P and R are greyhounds. Dogs S and U are labradors.
+"### Context:
+Exactly six dogs—P, Q, R, S, T, and U—are entered in a dog show. The judge of the show awards exactly four ribbons, one for each of first, second, third, and fourth places, to four of the dogs. The information that follows is all that is available about the six dogs: Each dog is either a greyhound or a labrador, but not both. Two of the six dogs are female and four are male. The judge awards ribbons to both female dogs, exactly one of which is a labrador. Exactly one labrador wins a ribbon. Dogs P and R place ahead of dog S, and dog S places ahead of dogs Q and T. Dogs P and R are greyhounds. Dogs S and U are labradors.
 ### Question: Which one of the following is a complete and accurate list of the dogs that can be greyhounds?
 ### Options:
 A) P, Q, S, T
@@ -1105,8 +1101,7 @@ dog_ribbon(P) < dog_ribbon(S) and dog_ribbon(R) < dog_ribbon(S) ::: Dogs P and R
 ### Error:
 TypeError: '<' not supported between instances of 'DatatypeRef' and 'DatatypeRef'. `Error in Line: pre_conditions.append(dog_ribbon(P) < dog_ribbon(S) and dog_ribbon(R) < dog_ribbon(S))`","### Analysis:
 The type returned by the function `dog_ribbon` is `ribbon`, and this type does not support less-than comparisons. The type of `ribbon` can be changed to `IntSort`. That is,`ribbon = IntSort([first, second, third, fourth, none])`"
-,,index,content
-,,"### Context:
+"### Context:
 The population of a small country is organized into five clansN, O, P, S, and T. Each year exactly three of the five clans participate in the annual harvest ceremonies. The rules specifying the order of participation of the clans in the ceremonies are as follows: Each clan must participate at least once in any two consecutive years. No clan participates for three consecutive years. Participation takes place in cycles, with each cycle ending when each of the five clans has participated three times. Only then does a new cycle begin. No clan participates more than three times within any cycle.
 ### Question:
 If the clans participating in the first year of a given cycle are N, O, and P, which one of the following could be the clans participating in the second year of that cycle?
@@ -1245,7 +1240,7 @@ is_sat(And(participates(O, second), participates(S, second), participates(T, sec
 ```
 
 This revised program should now be free of the identified errors and adhere to the specified format."
-,,"### Context:
+"### Context:
 Four peopleFritz, Gina, Helen, and Jerryhave formed a car pool to commute to work together six days a week from Monday through Saturday. Each day exactly one of the people drives. The schedule of the car pool's drivers for any given week must meet the following conditions: Each person drives on at least one day. No person drives on two consecutive days. Fritz does not drive on Monday. Jerry drives on Wednesday or Saturday or both, and he may also drive on other days. If Gina drives on Monday, then Jerry does not drive on Saturday.
 ### Question:
 If during one week Fritz drives exactly twice but he drives on neither Tuesday nor Wednesday, which one of the following could be true of that week?
@@ -1326,7 +1321,7 @@ is_sat(drives(Jerry, Friday)) ::: (E) Jerry drives on Friday.
    - Ensured that all constraints and options are correctly formatted and follow the specified rules, such as avoiding quotes, using `And` and `Or` correctly, and ensuring that each statement fits on a single line.
 
 This corrected program should now be free of the identified errors and adhere to the specified format for SAT logic programs."
-,,"### Context:
+"### Context:
 Four lionsF, G, H, Jand two tigersK and Mwill be assigned to exactly six stalls, one animal per stall. The stalls are arranged as follows: First Row: 1 2 3 Second Row: 4 5 6 The only stalls that face each other are stalls 1 and 4, stalls 2 and 5, and stalls 3 and 6. The following conditions apply: The tigers' stalls cannot face each other. A lion must be assigned to stall 1. H must be assigned to stall 6. J must be assigned to a stall numbered one higher than K's stall. K cannot be assigned to the stall that faces H's stall.
 ### Question:
 If K's stall is in the same row as H's stall, which one of the following must be true?
@@ -1414,7 +1409,7 @@ is_valid(assigned(M) % 3 == assigned(G) % 3) ::: (E)
    - Ensured that all option statements are correctly formatted and use the appropriate logical operations.
 
 This corrected program should now be free of syntax errors and should accurately represent the problem constraints and options."
-,,"### Context:
+"### Context:
 Five peopleHarry, Iris, Kate, Nancy, and Victorare to be scheduled as contestants on a television show, one contestant per day, for five consecutive days from Monday through Friday. The following restrictions governing the scheduling of contestants must be observed: Nancy is not scheduled for Monday. If Harry is scheduled for Monday, Nancy is scheduled for Friday. If Nancy is scheduled for Tuesday, Iris is scheduled for Monday. Kate is scheduled for the next day after the day for which Victor is scheduled.
 ### Question:
 If Iris is scheduled for the next day after Harry, which one of the following lists all those days any one of which could be the day for which Harry is scheduled?
@@ -1452,7 +1447,7 @@ TypeError: unsupported operand type(s) for +: 'DatatypeRef' and 'int'. `Error in
 	It is not supported to perform undefined operations on certain quantities.","### Analysis
 1. `days` is a custom type and cannot perform '+' operations. `days` can be redefined as an integer type, i.e., `days = IntSort([Monday, Tuesday, Wednesday, Thursday, Friday])`, and add the constraint `And(Monday == 1, Tuesday == 2, Wednesday == 3, Thursday == 4, Friday == 5) ::: Define the order`.
 2. Also note that the statement `Implies(scheduled(Harry) == d, scheduled(Iris) == (d + 1)) ::: Iris is scheduled for the next day after Harry` has an undefined `d`, which needs to be changed to `Exists([d:days], Implies(scheduled(Harry) == d, scheduled(Iris) == (d + 1))) ::: Iris is scheduled for the next day after Harry`."
-,,"### Context:
+"### Context:
 A fire chief is determining the work schedules of five firefighters: Fuentes, Graber, Howell, Iman, and Jackson. The schedule must meet the following conditions: Except for Saturday and Sunday, when none of them works, exactly one of the firefighters works each day. None of the firefighters can work more than two days per week. No firefighter works on two consecutive days. Fuentes never works later in the week than Jackson. If Howell works, then Graber must work on the following day.
 ### Question:
 Which one of the following CANNOT be a Monday-to-Friday work schedule?
@@ -1495,7 +1490,7 @@ days = IntSort([Monday, Tuesday, Wednesday, Thursday, Friday])
 And(Monday == 1, Tuesday == 2, Wednesday == 3, Thursday == 4, Friday == 5) ::: Define the adjacency relationship
 ... (omitting others)
 ```"
-,,"### Context:
+"### Context:
 John receives one grade for each of the following six courses: economics, geology, history, Italian, physics, and Russian. From highest to lowest, the possible grades are A, B, C, D, and E. E is the only failing grade. Two letter grades are consecutive if and only if they are adjacent in the alphabet. John's grades in geology and physics are consecutive. His grades in Italian and Russian are consecutive. He receives a higher grade in economics than in history. He receives a higher grade in geology than in physics.
 ### Question
 Assume that John's grade in physics is higher than his grade in Italian and consecutive with it and that his grades in Russian and physics differ. Which one of the following must be true?
@@ -1514,8 +1509,7 @@ E) John receives both a D and an E.
 TypeError: unsupported operand type(s) for +: 'DatatypeRef' and 'int'. `Error in Line: pre_conditions.append(grade(geology) == grade(physics) + 1)`","### Analysis
 The return type of the function `grade` is an `EnumSort`, which does not support the `+1` operation. The `grades` need to be changed to `IntSort` to allow `+1`. That is, `grades = IntSort([A, B, C, D, E])`.
 In addition, the order of five grades should be defined, such as `A == 1, B == 2`, etc."
-,,index,content
-,,"### Context:
+"### Context:
 A florist is making three corsages from four types of flowers: gardenias, orchids, roses, and violets. Each of the corsages will contain exactly three flowers. The nine flowers used in the corsages must include at least one flower from each of the four types, and at least twice as many roses as orchids must be used. The corsages must also meet the following specifications: Corsage 1 must contain exactly two types of flowers. Corsage 2 must contain at least one rose. Corsage 3 must contain at least one gardenia but no orchids.
 ### Question:
 If corsage 1 contains two orchids and one rose, what is the maximum total number of violets that the florist can use in making the three corsages?
@@ -1648,7 +1642,7 @@ is_valid(Count([c:corsages, f:flowers], And(contains(c, f), f == violets)) == 5)
 ```
 
 This corrected program should now be syntactically correct and ready for solving."
-,,"### Context:
+"### Context:
 The country of Zendu contains exactly four areas for radar detection: R, S, T, and U. Each detection area is circular and falls completely within Zendu. Part of R intersects T; part of S also intersects T; R does not intersect S. Area U is completely within R and also completely within T. At noon exactly four planes J, K, L, Mare over Zendu, in a manner consistent with the following statements: Each plane is in at least one of the four areas. J is in area S. K is not in any detection area that J is in. L is not in any detection area that M is in. M is in exactly one of the areas.
 ### Question:
 Which one of the following is a complete and accurate list of those planes any one of which could be within area T at noon?
@@ -1794,8 +1788,8 @@ is_accurate_list([in_area(J) == T, in_area(K) == T, in_area(L) == T, in_area(M) 
 ```
 
 This final program should now be syntactically correct and ready for solving."
-,,"### Context:
-A company is planning to allocate resources across four departments��Sales, Marketing, Research, and Development��in order to meet certain goals for the next quarter. Each department has been allocated a specific budget, and the following conditions apply:
+"### Context:
+A company is planning to allocate resources across four departments—Sales, Marketing, Research, and Development—in order to meet certain goals for the next quarter. Each department has been allocated a specific budget, and the following conditions apply:
 - Sales department must receive a budget greater than or equal to Marketing's budget.
 - Marketing department must receive a budget greater than or equal to Research's budget.
 - Research department must receive a budget greater than or equal to Development's budget.
@@ -1826,8 +1820,8 @@ ForAll([m:men], has_department(m) == Sales) ::: All men have a department.
 ### Error:
 `Z3Exception: sort mismatch. Error in Line: raise Z3Exception(msg)`","### Analysis:
 The error message indicates that there's a mismatch in the types or sorts being used in the Z3 solver. Specifically, the `has_department` function was defined to return `bool`, but the values being compared (e.g., the numbers 120000, 50000) is a deparment, not symbolic variables of type `bool`. Perhaps it is necessary to redefine another function to make the '==' operation meaningful."
-,,"### Context
-A competition is being held to select a design for Yancy College's new student union building. Each of six architects��Green, Jackson, Liu, Mertz, Peete, and Valdez��has submitted exactly one design. There are exactly six designs, and they are presented one at a time to the panel of judges, each design being presented exactly once, consistent with the following conditions: Mertz's design is presented at some time before Liu's and after Peete's. Green's design is presented either at some time before Jackson's or at some time after Liu's, but not both. Valdez's design is presented either at some time before Green's or at some time after Peete's, but not both.
+"### Context
+A competition is being held to select a design for Yancy College's new student union building. Each of six architects—Green, Jackson, Liu, Mertz, Peete, and Valdez—has submitted exactly one design. There are exactly six designs, and they are presented one at a time to the panel of judges, each design being presented exactly once, consistent with the following conditions: Mertz's design is presented at some time before Liu's and after Peete's. Green's design is presented either at some time before Jackson's or at some time after Liu's, but not both. Valdez's design is presented either at some time before Green's or at some time after Peete's, but not both.
 ### Question
 Which one of the following could be the order in which the designs are presented, from first to last?
 ### Options
@@ -1850,8 +1844,7 @@ order(submitter(design1)) < order(submitter(design2)) ::: Mertz's design is pres
 ### Error
 Z3Exception: Sort mismatch. `Error in Line: raise Z3Exception(msg)` Check the usage of each function, including the domain and range. For example, if the parameter of function A is of type T1, performing the operation A(T2) (which is incorrect) on type T2. Of course, this includes whether there are conflicts in the return types, etc.","### Analysis
 The domain of the function `order` is `designs`, and in `order(submitter(design1))`, the parameter is `submitter(design1)`, which, according to the definition, is of type `architects`, resulting in an error. How to modify this depends on the specific problem. For example, here, the display order of `design` is the same as the order of people (because they correspond one-to-one), so we might as well change the domain of `order` to `architects`, i.e., `order = Function([architects] -> [int])`, and then modify the entire program accordingly."
-,,index,content
-,,"### Context:
+"### Context:
 Eight camp counselorsFran, George, Henry, Joan, Kathy, Lewis, Nathan, and Olgamust each be assigned to supervise exactly one of three activitiesswimming, tennis, and volleyball. The assignment of counselors must conform to the following conditions: Each activity is supervised by at least two, but not more than three, of the eight counselors. Henry supervises swimming. Neither Kathy nor Olga supervises tennis. Neither Kathy nor Nathan supervises the same activity as Joan. If George supervises swimming, both Nathan and Olga supervise volleyball.
 ### Question:
 Which one of the following is a pair of counselors who could be two of three counselors assigned to supervise swimming?
@@ -1912,7 +1905,7 @@ is_sat(And(assigned(Joan) == swimming, assigned(Kathy) == swimming)) ::: (C)
 is_sat(And(assigned(Joan) == swimming, assigned(Nathan) == swimming)) ::: (D)
 is_sat(And(assigned(Joan) == swimming, assigned(Olga) == swimming)) ::: (E)
 ```"
-,,"### Context:
+"### Context:
 A soloist will play six different guitar concertos, exactly one each Sunday for six consecutive weeks. Two concertos will be selected from among three concertos by GiulianiH, J, and K; two from among four concertos by RodrigoM, N, O, and P; and two from among three concertos by VivaldiX, Y, and Z. The following conditions apply without exception: If N is selected, then J is also selected. If M is selected, then neither J nor O can be selected. If X is selected, then neither Z nor P can be selected. If both J and O are selected, then J is played at some time before O. X cannot be played on the fifth Sunday unless one of Rodrigo's concertos is played on the first Sunday.
 ### Question:
 If the six concertos to be played are J, K, N, O, Y, and Z and if N is to be played on the first Sunday, then which one of the following concertos CANNOT be played on the second Sunday?
@@ -1991,7 +1984,7 @@ is_unsat(played_on(O) == 2) ::: (C)
 is_unsat(played_on(Y) == 2) ::: (D)
 is_unsat(played_on(Z) == 2) ::: (E)
 ```"
-,,"### Context:
+"### Context:
 Six reviewersFrank, George, Hilda, Jackie, Karl, and Lenawill review four moviesMystery, Retreat, Seasonings, and Wolvesaccording to the following conditions: Each reviewer reviews exactly one movie, and each movie is reviewed by at least one of the six reviewers. Hilda reviews the same movie as Frank. Lena reviews the same movie as exactly one other reviewer. George reviews Mystery. Jackie reviews either Mystery or else Wolves. Hilda does not review Wolves.
 ### Question:
 Which one of the following is an acceptable assignment of reviewers to movies? Mystery Retreat Seasonings Wolves
@@ -2026,9 +2019,9 @@ is_sat(And(reviews(Jackie) == Mystery, reviews(George) == Mystery, reviews(Lena)
 ```
 ### Error
 Multiple-choice question. This program has multiple options (`['(B)', '(D)', '(E)']`) judged as correct, but this question is a single-choice question. It seems that some information has been overlooked, and the program needs to be re-examined.","### Analysis
-1. The constraint statement ��each reviewer reviews exactly one movie�� should be translated more strictly using `Count` to indicate ��exactly one��. That is, `ForAll([r:reviewers], Count([m:movies], reviews(r) == m) == 1)`.
+1. The constraint statement “each reviewer reviews exactly one movie” should be translated more strictly using `Count` to indicate “exactly one”. That is, `ForAll([r:reviewers], Count([m:movies], reviews(r) == m) == 1)`.
 2. In `Count([r:reviewers], reviews(r) == reviews(Lena)) == 1`, it should be restricted that `r != Lena`.
-3. There is a misunderstanding regarding the options. For ��A) George Frank, Hilda Jackie, Lena Karl��, ""George"" forms a group alone, ""Frank, Hilda"" form a group, ""Jackie, Lena"" form a group, and ""Karl"" forms a group alone. Other options should be divided similarly.
+3. There is a misunderstanding regarding the options. For “A) George Frank, Hilda Jackie, Lena Karl”, ""George"" forms a group alone, ""Frank, Hilda"" form a group, ""Jackie, Lena"" form a group, and ""Karl"" forms a group alone. Other options should be divided similarly.
 The final program is revised as follows:
 ```plaintext
 # Declarations
@@ -2052,7 +2045,7 @@ is_sat(And(reviews(George) == Mystery, reviews(Karl) == Retreat, reviews(Lena) =
 is_sat(And(reviews(George) == Mystery, reviews(Karl) == Mystery, reviews(Frank) == Retreat, reviews(Hilda) == Retreat, reviews(Lena) == Seasonings, reviews(Jackie) == Wolves)) ::: (D)
 is_sat(And(reviews(Jackie) == Mystery, reviews(George) == Retreat, reviews(Lena) == Retreat, reviews(Frank) == Seasonings, reviews(Hilda) == Seasonings, reviews(Karl) == Wolves)) ::: (E)
 ```"
-,,"### Context:
+"### Context:
 Six reviewersFrank, George, Hilda, Jackie, Karl, and Lenawill review four moviesMystery, Retreat, Seasonings, and Wolvesaccording to the following conditions: Each reviewer reviews exactly one movie, and each movie is reviewed by at least one of the six reviewers. Hilda reviews the same movie as Frank. Lena reviews the same movie as exactly one other reviewer. George reviews Mystery. Jackie reviews either Mystery or else Wolves. Hilda does not review Wolves.
 ### Question:
 Which one of the following can be true?
@@ -2138,7 +2131,7 @@ Multiple-choice question. This program has multiple options (`['(A)', '(C)', '(E
 
 3. **Options Section**:
    - We need to ensure that the options are correctly labeled and that the constraints are properly applied to each option."
-,,"### Context:
+"### Context:
 On the basis of an examination, nine studentsFred, Glen, Hilary, Ida, Jan, Kathy, Laura, Mike, and Nickare each placed in one of three classes. The three highest scorers are placed in the level 1 class; the three lowest scorers are placed in the level 3 class. The remaining three are placed in the level 2 class. Each class has exactly three students. Ida scores higher than Glen. Glen scores higher than both Jan and Kathy. Jan scores higher than Mike. Mike scores higher than Hilary. Hilary scores higher than Nick. Kathy scores higher than both Fred and Laura.
 ### Question:
 Which one of the following students could be in the level 2 class but cannot be in the level 3 class?
@@ -2172,8 +2165,8 @@ placed(Kathy) != Level3 ::: Kathy scores higher than both Fred and Laura
 ### Error
 No correct option problem. All options in this program are judged as incorrect, but this question is a single-choice question. It seems that some information has been overlooked, and the program needs to be re-examined.","### Analysis
 1. Being assigned to which class and how many points one scores are two separate matters; therefore, two functions should be defined to distinguish them, adding the function `score = Function([students] -> [int])`. Then, the statements should be modified based on this.
-2. For any one of the top three scorers, at most only two people have better grades than him/her, so ""The three highest scorers are placed in the level 1 class"" can be translated as `ForAll([s1:students], Implies(Count([s2:students], score(s1) < score(s2)) <= 2, placed(s1) == Level1))`. Similarly, we can translate ��The three lowest scorers are placed in the level 3 class��.
-3. Add the constraint `ForAll([c:classes], Count([s:students], placed(s) == c) == 3) ::: Each class has exactly three students`, thus there's no need to translate ��The remaining three are placed in the level 2 class��.
+2. For any one of the top three scorers, at most only two people have better grades than him/her, so ""The three highest scorers are placed in the level 1 class"" can be translated as `ForAll([s1:students], Implies(Count([s2:students], score(s1) < score(s2)) <= 2, placed(s1) == Level1))`. Similarly, we can translate “The three lowest scorers are placed in the level 3 class”.
+3. Add the constraint `ForAll([c:classes], Count([s:students], placed(s) == c) == 3) ::: Each class has exactly three students`, thus there's no need to translate “The remaining three are placed in the level 2 class”.
 4. Modify the remaining statements using `score`.
 The final program is modified to:
 ```plaintext
@@ -2197,7 +2190,7 @@ And(score(Kathy) > score(Fred), score(Kathy) > score(Laura)) ::: Kathy scores hi
 # Options
 ...
 ```"
-,,"### Context:
+"### Context:
 Six cities are located within the numbered areas as follows: Within the six-city area there are exactly four hospitals, two jails, and two universities. These eight institutions are located as follows: No institution is in more than one of the cities. None of the cities contains more than one jail, and none contains more than one university. None of the cities contains both a jail and a university. Each jail is located in a city that contains at least one hospital. The universities are located in two cities that do not share a common boundary. City 3 contains a university, and city 6 contains a jail.
 ### Question:
 Which one of the following could be true?
@@ -2231,7 +2224,7 @@ It seems that the translation of many sentences has issues.
 2. ""City 6 contains a jail"" should be translated as `Or(located_in(Jail1) == City6, located_in(Jail2) == City6)`.
 3. ""None of the cities contains more than one jail"" should be translated as `ForAll([c:cities], Implies(located_in(Jail1) == c, located_in(Jail2) != c))`. Similarly, for ""None of the cities contains more than one university"".
 4. ""None of the cities contains both a jail and a university"" should be translated as `ForAll([c:cities], Implies(Or(located_in(University1) == c, located_in(University2) == c), Not(Or(located_in(Jail1) == c, located_in(Jail2) == c))))`."
-,,"### Context:
+"### Context:
 Three boysKarl, Luis, and Migueland three girlsRita, Sarah, and Turaare giving a dance recital. Three dances1, 2, and 3are to be performed. Each dance involves three pairs of children, a boy and a girl partnering each other in each pair, according to the following conditions: Karl partners Sarah in either dance 1 or dance 2. Whoever partners Rita in dance 2 must partner Sarah in dance 3. No two children can partner each other in more than one dance.
 ### Question:
 If Sarah partners Luis in dance 3, which one of the following is a complete and accurate list of the girls any one of whom could partner Miguel in dance 1?
@@ -2266,7 +2259,7 @@ is_accurate_list([partners(Miguel, Rita, 1), partners(Miguel, Tura, 1)]) ::: (E)
 ### Error
 No correct option problem. All options in this program are judged as incorrect, but this question is a single-choice question. It seems that some information has been overlooked, and the program needs to be re-examined.","### Analysis
 This problem contains an implicit piece of information, which is that in each dance, a boy can only be paired with one unique girl. This statement should be added to the constraints. That is, `ForAll([d:dances], ForAll([b1:boys, b2:boys], Implies(b1 != b2, Exists([g1:girls, g2:girls], And(g1 != g2, partners(b1, g1, d), partners(b2, g2, d)))))) ::: In each dance, a boy must be paired with one unique girl.`"
-,,"### Context:
+"### Context:
 A florist is making three corsages from four types of flowers: gardenias, orchids, roses, and violets. Each of the corsages will contain exactly three flowers. The nine flowers used in the corsages must include at least one flower from each of the four types, and at least twice as many roses as orchids must be used. The corsages must also meet the following specifications: Corsage 1 must contain exactly two types of flowers. Corsage 2 must contain at least one rose. Corsage 3 must contain at least one gardenia but no orchids.
 ### Question:
 The maximum total number of roses that can be used in the three corsages is
@@ -2323,7 +2316,7 @@ contains(Corsage2, roses) >= 1 ::: Corsage 2 must contain at least one rose
 contains(Corsage3, gardenias) >= 1 ::: Corsage 3 must contain at least one gardenia
 ...
 ```"
-,,"### Context
+"### Context
 There are exactly six groups in this year's Civic Parade: firefighters, gymnasts, jugglers, musicians, puppeteers, and veterans. Each group marches as a unit; the groups are ordered from first, at the front of the parade, to sixth, at the back. The following conditions apply: At least two groups march behind the puppeteers but ahead of the musicians. Exactly one group marches behind the firefighters but ahead of the veterans. The gymnasts are the first, third, or fifth group.
 ### Question
 If the gymnasts march immediately ahead of the veterans, then which one of the following could be the fourth group?
@@ -2358,7 +2351,7 @@ Exists([g1:groups], Exists([g2:groups], And(position(g1) > position(puppeteers),
 Count([g:groups], And(position(g) > position(firefighters), position(g) < position(veterans))) == 1 ::: Exactly one group marches behind the firefighters but ahead of the veterans.
 ...
 ```"
-,,"### Context:
+"### Context:
 Seven children are to be seated in seven chairs arranged in a row that runs from west to east. All seven children will face north. Four of the children are boys: Frank, Harry, Ivan, and Joel. Three are girls: Ruby, Sylvia, and Thelma. The children are assigned to chairs according to the following conditions: Exactly one child sits in each chair. No boy sits next to another boy. Ivan sits next to and east of the fourth child in the row. Sylvia sits east of Ivan. Frank sits next to Ruby.
 ### Question:
 Which one of the following statements must be false?
